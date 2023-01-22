@@ -3,9 +3,32 @@
   padding: 0;
   box-sizing: border-box;
 }
+html{
+  height: 100%;
+}
+.App{
+  height: 100%;
+}
+#root{
+  height: 100%;
+}
 
 body {
   font-family: sans-serif;
+  height: 100%;
+}
+
+.legend {
+  border:1px solid black;
+  justify-content: center;
+  text-align: center;
+  margin-left: 10vh;
+  margin-right: 10vh;
+  margin-top: 10vh;
+}
+
+.legend-holder{
+  height: 100%;
 }
 
 header {

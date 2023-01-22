@@ -2,19 +2,24 @@
 import './App.css';
 import Legend from './components/Legend';
 import Navbar from './components/Navbar';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import Reducers from './redux/reducers/reducers'
+import thunk from 'redux-thunk';
+const store = createStore(Reducers, applyMiddleware(thunk))
+function App() {
+  return (
 
-  function App() {
-    return (
 
 
-      
-      <div className="App">
-        
+    <div className="App">
+      <Provider store={store}>
         <Navbar />
-        
-        <Legend />
-      </div>
-    );
-  }
 
-  export default App;
+        <Legend />
+      </Provider>
+    </div>
+  );
+}
+
+export default App;

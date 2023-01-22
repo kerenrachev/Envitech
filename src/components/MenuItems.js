@@ -32,7 +32,7 @@ const MenuItems = ({ monitorTypeId, monitorName }) => {
           >
             {monitorName}{' '}
           </button>
-          <Dropdown monitorList={monitorList} dropdown={dropdown}/>
+          <Dropdown monitorTypeId={monitorTypeId} monitorList={monitorList} dropdown={dropdown}/>
     </li>
   );
 };
