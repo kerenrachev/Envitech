@@ -27,6 +27,7 @@ const MenuItems = ({ monitorTypeId, monitorTypeName }) => {
   return (
     <li className="menu-items">
           <button type="button" aria-haspopup="menu"
+          className='nav-button'
            aria-expanded={dropdown ? "true" : "false"}
            onClick={() => setDropdown((prev) => !prev)}
           >

@@ -12,7 +12,7 @@ const Dropdown = ({monitorTypeName, monitorTypeId,monitorList, dropdown }) => {
             
             <li key={index} className="menu-items">
                 
-                <button type="button" onClick={() => dispatch(setLegendByMonitorId(monitorTypeId, monitorTypeName, submenu.Name))}>{submenu.Name}</button>
+                <button className='nav-submenu-button' type="button" onClick={() => dispatch(setLegendByMonitorId(monitorTypeId, monitorTypeName, submenu.Name))}>{submenu.Name}</button>
             </li>
         ))}
       </ul>

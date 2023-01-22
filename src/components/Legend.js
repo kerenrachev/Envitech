@@ -13,28 +13,30 @@ const Legend = () => {
     const monitorTypeName = useSelector((state) => state.legend.monitorTypeName)
     const monitorLevelName = useSelector((state) => state.legend.monitorName)
     return (
-        <div className='legend-holder'>
+        <>
             {
                 legend ?
-                    <div className='legend'>
+                        <div className='legend'>
 
-                        <h1>{legend ? monitorTypeName + " "+ monitorLevelName: ""}</h1>
+                            <p className='legend-card-title'>{legend ? monitorTypeName + " " + monitorLevelName : ""}</p>
 
-                        {legend.tags.map((item) => {
-                            return (
-                                <div className='one-legend-holder'>
-                                        <div className='color-holder' style={{height: '25px', width: '25px', background: item.Color}}></div>
+                            {legend.tags.map((item) => {
+                                return (
+                                    <div className='one-legend-holder'>
+                                        <div className='color-holder' style={{ height: '25px', width: '25px', background: item.Color }}></div>
                                         <p className='tag-label'>{item["Label"]}</p>
-                                </div>
+                                    </div>
 
-                            )
-                        })}
+                                )
+                            })}
                     </div>
                     :
                     null
             }
 
-        </div>
+        </>
+
+
 
     );
 };
