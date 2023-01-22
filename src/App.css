@@ -3,16 +3,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-html{
-  height: 100%;
-}
-.App{
-  height: 100%;
-}
-#root{
-  height: 100%;
-}
-
 body {
   font-family: sans-serif;
   height: 100%;
@@ -148,4 +138,8 @@ button span {
 .content a {
   color: #cc3852;
   margin-right: 10px;
+}
+
+.one-legend-holder{
+  flex-direction: row;
 }

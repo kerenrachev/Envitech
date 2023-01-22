@@ -17,8 +17,18 @@ const Legend = () => {
             {
                 legend ?
                     <div className='legend'>
-                        {console.log(legend)}
-                        <h1>{legend ? legend.Id : ""}</h1>
+
+                        <h1>{/*legend ? legend.Id : ""*/} MonitorTypeName [Monitor]</h1>
+
+                        {legend.tags.map((item) => {
+                            return (
+                                <div className='one-legend-holder'>
+                                        <div style={{height: '10px', width: '10px', background: item.Color}}></div>
+                                        <p>{item["Label"]}</p>
+                                </div>
+
+                            )
+                        })}
                     </div>
                     :
                     null
