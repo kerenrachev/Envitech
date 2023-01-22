@@ -11,7 +11,7 @@ const Navbar = () => {
     <nav>
       <ul className="menus">
         {legends["MonitorType"].map((item, index) => {
-            return <MenuItems monitorTypeId={item["Id"]} monitorName={item['Name']}/>;
+            return <MenuItems monitorTypeId={item["Id"]} monitorTypeName={item['Name']}/>;
         })}
       </ul>
     </nav>

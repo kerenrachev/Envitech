@@ -10,21 +10,21 @@ import '../App.css';
 const Legend = () => {
 
     const legend = useSelector((state) => state.legend.legendMap)
-
-
+    const monitorTypeName = useSelector((state) => state.legend.monitorTypeName)
+    const monitorLevelName = useSelector((state) => state.legend.monitorName)
     return (
         <div className='legend-holder'>
             {
                 legend ?
                     <div className='legend'>
 
-                        <h1>{/*legend ? legend.Id : ""*/} MonitorTypeName [Monitor]</h1>
+                        <h1>{legend ? monitorTypeName + " "+ monitorLevelName: ""}</h1>
 
                         {legend.tags.map((item) => {
                             return (
                                 <div className='one-legend-holder'>
-                                        <div style={{height: '10px', width: '10px', background: item.Color}}></div>
-                                        <p>{item["Label"]}</p>
+                                        <div className='color-holder' style={{height: '25px', width: '25px', background: item.Color}}></div>
+                                        <p className='tag-label'>{item["Label"]}</p>
                                 </div>
 
                             )

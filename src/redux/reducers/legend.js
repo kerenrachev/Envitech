@@ -2,7 +2,9 @@ import {LEGEND_STATE_CHANGED} from '../constants'
 
 
 const initialState ={
-    legendMap: null
+    legendMap: null,
+    monitorTypeName: null,
+    monitorName: null
 }
 
 export const legend = (state = initialState, action) =>{
@@ -10,7 +12,9 @@ export const legend = (state = initialState, action) =>{
         case LEGEND_STATE_CHANGED:
             return {
                 ...state,
-                legendMap : action.legendMap
+                legendMap : action.legendMap,
+                monitorTypeName: action.monitorTypeName,
+                monitorName: action.monitorName
             }
         default : return state
     }

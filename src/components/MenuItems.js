@@ -3,7 +3,7 @@ import { legends } from '../data/Legends'
 import { useEffect, useState } from 'react';
 import '../App.css';
 
-const MenuItems = ({ monitorTypeId, monitorName }) => {
+const MenuItems = ({ monitorTypeId, monitorTypeName }) => {
 
     const [monitorList, setMonitorList] = useState([])
     const [dropdown, setDropdown] = useState(false);
@@ -30,9 +30,9 @@ const MenuItems = ({ monitorTypeId, monitorName }) => {
            aria-expanded={dropdown ? "true" : "false"}
            onClick={() => setDropdown((prev) => !prev)}
           >
-            {monitorName}{' '}
+            {monitorTypeName}{' '}
           </button>
-          <Dropdown monitorTypeId={monitorTypeId} monitorList={monitorList} dropdown={dropdown}/>
+          <Dropdown monitorTypeName={monitorTypeName} monitorTypeId={monitorTypeId} monitorList={monitorList} dropdown={dropdown}/>
     </li>
   );
 };

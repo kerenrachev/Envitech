@@ -1,6 +1,6 @@
 import {LEGEND_STATE_CHANGED} from '../constants'
 import {legends} from '../../data/Legends'
-export const setLegendByMonitorId = (monitorTypeLegendId) => (dispatch) =>{
+export const setLegendByMonitorId = (monitorTypeLegendId, monitorTypeName, monitorName) => (dispatch) =>{
     
     let tempLegend = ""
     legends["Legends"].forEach((legend)=>{
@@ -10,6 +10,8 @@ export const setLegendByMonitorId = (monitorTypeLegendId) => (dispatch) =>{
     })
     return dispatch({
         legendMap: tempLegend,
+        monitorTypeName,
+        monitorName,
         type: LEGEND_STATE_CHANGED
     })
 }
