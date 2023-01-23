@@ -1,4 +1,4 @@
-export const legends = {
+{
     "MonitorType": [
         {
             "Id": 0,

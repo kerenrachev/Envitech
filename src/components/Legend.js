@@ -1,11 +1,7 @@
-
-import { legends } from '../data/Legends'
-import React, { useState, useEffect } from 'react';
-import MenuItems from './MenuItems'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react';
+import {useSelector } from 'react-redux'
 import '../App.css';
-
-
+import {LABEL} from '../constants/legendsJSON'
 
 const Legend = () => {
 
@@ -15,16 +11,16 @@ const Legend = () => {
     return (
         <>
             {
-                legend ?
+                legend && monitorLevelName && monitorLevelName ?
                         <div className='legend'>
 
-                            <p className='legend-card-title'>{legend ? monitorTypeName + " " + monitorLevelName : ""}</p>
+                            <p className='legend-card-title'>{  monitorTypeName + " " + monitorLevelName }</p>
 
-                            {legend.tags.map((item) => {
+                            {legend.tags?.map((item) => {
                                 return (
                                     <div className='one-legend-holder'>
                                         <div className='color-holder' style={{ height: '25px', width: '25px', background: item.Color }}></div>
-                                        <p className='tag-label'>{item["Label"]}</p>
+                                        <p className='tag-label'>{item[LABEL]? item[LABEL]: ""}</p>
                                     </div>
 
                                 )
@@ -33,11 +29,7 @@ const Legend = () => {
                     :
                     null
             }
-
         </>
-
-
-
     );
 };
 

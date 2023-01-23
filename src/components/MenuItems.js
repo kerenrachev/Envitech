@@ -1,9 +1,11 @@
 import Dropdown from './Dropdown';
-import { legends } from '../data/Legends'
 import { useEffect, useState } from 'react';
 import '../App.css';
+import { MONITOR } from '../constants/legendsJSON';
+import {MONITOR_TYPE_ID} from '../constants/legendsJSON';
 
-const MenuItems = ({ monitorTypeId, monitorTypeName }) => {
+var legends = require('../data/Legends.json')
+const MenuItems = ({ monitorTypeId, monitorTypeName, monitorTypeLegendId }) => {
 
     const [monitorList, setMonitorList] = useState([])
     const [dropdown, setDropdown] = useState(false);
@@ -11,8 +13,8 @@ const MenuItems = ({ monitorTypeId, monitorTypeName }) => {
 
     function getMonitorListById(){
         let tempMonitorList = []
-        legends["Monitor"].forEach((item)=>{
-            if(item["MonitorTypeId"] === monitorTypeId){
+        legends[MONITOR]?.forEach((item)=>{
+            if(item[MONITOR_TYPE_ID] === monitorTypeId){
                 tempMonitorList.push(item)
             }
         })
@@ -25,7 +27,7 @@ const MenuItems = ({ monitorTypeId, monitorTypeName }) => {
     },[])
 
   return (
-    <li className="menu-items">
+    <li key={monitorTypeId} className="menu-items">
           <button type="button" aria-haspopup="menu"
           className='nav-button'
            aria-expanded={dropdown ? "true" : "false"}
@@ -33,7 +35,7 @@ const MenuItems = ({ monitorTypeId, monitorTypeName }) => {
           >
             {monitorTypeName}{' '}
           </button>
-          <Dropdown monitorTypeName={monitorTypeName} monitorTypeId={monitorTypeId} monitorList={monitorList} dropdown={dropdown}/>
+          <Dropdown monitorTypeName={monitorTypeName} monitorTypeLegendId={monitorTypeLegendId} monitorList={monitorList} dropdown={dropdown}/>
     </li>
   );
 };

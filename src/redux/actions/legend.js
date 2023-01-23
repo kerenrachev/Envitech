@@ -1,10 +1,12 @@
 import {LEGEND_STATE_CHANGED} from '../constants'
-import {legends} from '../../data/Legends'
+import { LEGENDS } from '../../constants/legendsJSON'
+import { ID } from '../../constants/legendsJSON'
+var legends = require('../../data/Legends')
 export const setLegendByMonitorId = (monitorTypeLegendId, monitorTypeName, monitorName) => (dispatch) =>{
     
-    let tempLegend = ""
-    legends["Legends"].forEach((legend)=>{
-        if(legend["Id"] === monitorTypeLegendId){
+    let tempLegend = null
+    legends[LEGENDS]?.forEach((legend)=>{
+        if(legend[ID] === monitorTypeLegendId){
             tempLegend= legend
         }
     })
