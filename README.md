@@ -1,10 +1,12 @@
-# How to run the app
+# Keren Rachev's project
 
 Check the live demo here: [https://kerenrachev-envitech.netlify.app/](https://kerenrachev-envitech.netlify.app/) 
 
-## Available Scripts
+### How to run the application locally
 
-In the project directory, you can run:
+Clone the repository, and open the project in your preffered IDE
+
+In the project directory, open the terminal, you can run:
 
 ### `npm install`
 
