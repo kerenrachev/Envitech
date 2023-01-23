@@ -4,7 +4,7 @@ import '../App.css';
 import { setLegendByMonitorId } from '../redux/actions/legend'
 
 
-const Dropdown = ({ monitorTypeName, monitorTypeLegendId, monitorList, dropdown }) => {
+const Dropdown = ({ monitorTypeName, legends, monitorList, dropdown }) => {
 
   const dispatch = useDispatch()
 
@@ -14,7 +14,7 @@ const Dropdown = ({ monitorTypeName, monitorTypeLegendId, monitorList, dropdown 
         <>
           {submenu.Name ?
             <li key={index} className="menu-items">
-              <button className='nav-submenu-button' type="button" onClick={() => dispatch(setLegendByMonitorId(monitorTypeLegendId, monitorTypeName, submenu.Name))}>{submenu.Name}</button>
+              <button className='nav-submenu-button' type="button" onClick={() => dispatch(setLegendByMonitorId(legends, monitorTypeName, submenu.Name))}>{submenu.Name}</button>
             </li>
             :
             false

@@ -1,7 +1,7 @@
 import React from 'react';
-import {useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import '../App.css';
-import {LABEL} from '../constants/legendsJSON'
+import { LABEL } from '../constants/legendsJSON'
 
 const Legend = () => {
 
@@ -12,19 +12,19 @@ const Legend = () => {
         <>
             {
                 legend && monitorLevelName && monitorLevelName ?
-                        <div className='legend'>
+                    <div className='legend'>
 
-                            <p className='legend-card-title'>{  monitorTypeName + " " + monitorLevelName }</p>
+                        <p className='legend-card-title'>{monitorTypeName + " " + monitorLevelName}</p>
 
-                            {legend.tags?.map((item) => {
-                                return (
-                                    <div className='one-legend-holder'>
-                                        <div className='color-holder' style={{ height: '25px', width: '25px', background: item.Color }}></div>
-                                        <p className='tag-label'>{item[LABEL]? item[LABEL]: ""}</p>
-                                    </div>
+                        {legend.tags?.map((item) => {
+                            return (
+                                <div className='one-legend-holder'>
+                                    <div className='color-holder' style={{ height: '25px', width: '25px', background: item.Color }}></div>
+                                    <p className='tag-label'>{item[LABEL] ? item[LABEL] : ""}</p>
+                                </div>
 
-                                )
-                            })}
+                            )
+                        })}
                     </div>
                     :
                     null
